@@ -190,8 +190,7 @@ WORKDIR /
 RUN rm -rf /tmp
 
 # Expose omni's ports
-EXPOSE 2809
-EXPOSE 11169
+EXPOSE 2809 11169
 
 # Prepare the /etc/profile to use the OMNISERVICEIP environment variable
 RUN echo "sed -i s/OMNISERVICEIP/\$OMNISERVICEIP/g /etc/omniORB.cfg" | tee -a /root/.bashrc | tee -a /root/.bash_profile

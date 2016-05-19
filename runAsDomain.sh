@@ -50,4 +50,4 @@ if [ "$1" != "" ]; then
 fi
 
 # Run the docker container as a domain
-docker run --net=host -e OMNISERVICEIP=$ipToUse --name rhdomain -i -t redhawk-base
+docker run --net=host --rm -e OMNISERVICEIP=$ipToUse --name rhdomain -v /usr/local/redhawk/sdr -i -t redhawk-base

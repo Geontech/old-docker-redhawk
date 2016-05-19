@@ -112,10 +112,6 @@ RUN git clone git://github.com/RedhawkSDR/framework-codegen.git && \
     cd /tmp && \
     rm -rf framework-codegen
 
-# Expose omni's ports
-EXPOSE 2809
-EXPOSE 11169
-
 # Add the startDomain script
 COPY startDomain.sh /startDomain.sh
 
@@ -128,8 +124,5 @@ ONBUILD ENV LDFLAGS         ${LDFLAGS}
 ONBUILD ENV CPPFLAGS        ${CPPFLAGS}
 ONBUILD ENV SDRROOT         ${SDRROOT}
 ONBUILD ENV OSSIEHOME       ${OSSIEHOME}
-
-# Expose SDRROOT
-VOLUME ${SDRROOT}
 
 CMD ["/bin/bash", "-l", "/startDomain.sh"]
