@@ -56,9 +56,9 @@ RUN wget http://sourceforge.net/projects/boost/files/boost/1.56.0/boost_1_56_0.t
     rm -rf boost_1_56_0*
 
 # xerces-c
-RUN wget http://apache.cs.utah.edu//xerces/c/3/sources/xerces-c-3.1.3.tar.gz && \
-    tar xf xerces-c-3.1.3.tar.gz && \
-    cd xerces-c-3.1.3 && \
+RUN wget http://apache.cs.utah.edu//xerces/c/3/sources/xerces-c-3.1.4.tar.gz && \
+    tar xf xerces-c-3.1.4.tar.gz && \
+    cd xerces-c-3.1.4 && \
     ./configure \
         --enable-transcoder-icu \
         LDFLAGS=${LDFLAGS} \
