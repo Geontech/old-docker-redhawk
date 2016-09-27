@@ -47,7 +47,7 @@ ENV PATH            ${OSSIEHOME}/bin:$PATH
 # Framework CORE
 RUN git clone git://github.com/redhawksdr/framework-core.git && \
     cd framework-core && \
-    git checkout tags/2.0.0 && \
+    git checkout tags/2.0.2 && \
     cd src && \
     touch AUTHORS ChangeLog NEWS README && \
     ./reconf && \
@@ -68,7 +68,7 @@ RUN git clone git://github.com/redhawksdr/framework-core.git && \
 # Framework BULKIO
 RUN git clone git://github.com/RedhawkSDR/framework-bulkioInterfaces.git && \
     cd framework-bulkioInterfaces && \
-    git checkout tags/2.0.0 && \
+    git checkout tags/2.0.2 && \
     mkdir src && touch src/AUTHORS src/ChangeLog src/NEWS src/README && \
     ./reconf && \
     ./configure \
@@ -88,7 +88,7 @@ RUN git clone git://github.com/RedhawkSDR/framework-bulkioInterfaces.git && \
 # Framework FEI
 RUN git clone git://github.com/RedhawkSDR/frontendInterfaces.git && \
     cd frontendInterfaces && \
-    git checkout tags/2.3.0 && \
+    git checkout tags/2.3.2 && \
     mkdir src && touch src/AUTHORS src/ChangeLog src/NEWS src/README && \
     ./reconf && \
     ./configure \
@@ -107,7 +107,7 @@ RUN git clone git://github.com/RedhawkSDR/frontendInterfaces.git && \
 # Framework CodeGen
 RUN git clone git://github.com/RedhawkSDR/framework-codegen.git && \
     cd framework-codegen && \
-    git checkout tags/2.0.0 && \
+    git checkout tags/2.0.2 && \
     python setup.py install && \
     cd /tmp && \
     rm -rf framework-codegen
