@@ -56,9 +56,9 @@ RUN wget http://sourceforge.net/projects/boost/files/boost/1.56.0/boost_1_56_0.t
     rm -rf boost_1_56_0*
 
 # xerces-c
-RUN wget http://apache.cs.utah.edu//xerces/c/3/sources/xerces-c-3.1.4.tar.gz && \
-    tar xf xerces-c-3.1.4.tar.gz && \
-    cd xerces-c-3.1.4 && \
+RUN wget http://apache.cs.utah.edu//xerces/c/3/sources/xerces-c-3.2.0.tar.gz && \
+    tar xf xerces-c-3.2.0.tar.gz && \
+    cd xerces-c-3.2.0 && \
     ./configure \
         --enable-transcoder-icu \
         LDFLAGS=${LDFLAGS} \
@@ -81,9 +81,9 @@ RUN wget http://www.codesynthesis.com/download/xsd/3.3/xsd-3.3.0-2+dep.tar.bz2 &
     rm -rf xsd-3.3.0*
 
 # apr
-RUN wget http://apache.osuosl.org/apr/apr-1.5.2.tar.gz && \
-    tar xf apr-1.5.2.tar.gz && \
-    cd apr-1.5.2 && \
+RUN wget http://apache.osuosl.org/apr/apr-1.6.2.tar.gz && \
+    tar xf apr-1.6.2.tar.gz && \
+    cd apr-1.6.2 && \
     ./configure  \
         LDFLAGS=${LDFLAGS} \
         CPPFLAGS=${CPPFLAGS} \
@@ -94,9 +94,9 @@ RUN wget http://apache.osuosl.org/apr/apr-1.5.2.tar.gz && \
     rm -rf apr*
 
 # apr-util
-RUN wget http://apache.osuosl.org/apr/apr-util-1.5.4.tar.gz && \
-    tar xf apr-util-1.5.4.tar.gz && \
-    cd apr-util-1.5.4 && \
+RUN wget http://apache.osuosl.org/apr/apr-util-1.6.0.tar.gz && \
+    tar xf apr-util-1.6.0.tar.gz && \
+    cd apr-util-1.6.0 && \
     ./configure --with-apr=/usr/local/apr \
         LDFLAGS=${LDFLAGS} \
         CPPFLAGS=${CPPFLAGS} \
@@ -165,7 +165,7 @@ RUN git clone -b develop git://github.com/redhawksdr/omniEvents && \
     rm -rf omniEvents*
 
 # Install and configure the correct init.d script
-COPY omniEvents /etc/init.d/omniEvents    
+COPY omniEvents /etc/init.d/omniEvents
 RUN echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH" > /etc/default/omniorb-eventservice && \
     mkdir -p /var/lib/omniEvents
 
